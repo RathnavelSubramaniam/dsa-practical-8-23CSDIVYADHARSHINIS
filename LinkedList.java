@@ -28,7 +28,7 @@ this.next = null;
 public static void main(String[] args) {
         LinkedList list = new LinkedList();
         Scanner sc = new Scanner(System.in);
-        
+
 int pos=0;
 int data,data1;
         System.out.println("ENTER INTEGERS TO CREATE NODES (ENTER A NON-INTEGER TO EXIT):");
@@ -56,6 +56,7 @@ int data,data1;
               System.out.println("Enter integers only");
               System.exit(0);
             }
+            System.out.println("ELEMENT INSERTED");
             System.out.println("LINKED LIST AFTER INSERTING");
             list.displayList();
           }
@@ -63,9 +64,16 @@ int data,data1;
     }
       public void insertEnd(int data) 
     {    
-       //TYPE YOUR CODE HERE 
+       Node newNode = new Node(data); 
+    if (head == null) {
+        head = newNode;
+        tail = newNode;
+    } else {
+        tail.next = newNode;
+        tail = newNode;      
+    }
     }  
-     
+
 public void displayList() {
         Node current = head;
         while (current != null) {
